@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+body {
+  background:linear-gradient(141deg, #ccc 25%, #eee 40%, #ddd 55%);
+  color:#555;
+  font-family:'Roboto';
+  overflow:hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-transform: translate3d(0,0,0);
+}
+
+
+div{
+  transition: all 0.1s;
+}
+
+.containerAfter
+{
+  text-align: start;
+  padding-top: 1vh;
+  overflow: hidden;
+}
+
+.container
+{
+  text-align:center;
+  font-weight:300;
+  font-size:56px;
+  padding-top:40vh;
+  height:100vh;
+
+}
+
+.logo-container {
+  display:inline-block;
+  overflow:hidden;
+  white-space:nowrap;
+  animation: showup 1s ease-in-out;
+}
+
+span
+{
+  padding: 0px;
+  margin: 0px;
+  display: inline-block;
+}
+
+/*.name-start: after
+{
+  content: ""
+  opacity: 0;
+  animation: slidein 2s ease 1s;
+}*/
+
+.down-scroll
+{
+  opacity: 0;
+  width: 5vw;
+  height: 5vh;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30vh;
+  animation: showtheway 2s ease 3s infinite;
+}
+
+
+.expansion
+{
+  animation: slidein 3s;
+  animation-fill-mode: forwards; /*To retain state after animation.*/
+}
+
+/*.expansion:after 
+{
+  content: "o";
+  width: 0px;
+  animation: newtext 1s ease 3s;
+}*/
+
+/*div:first-of-type {     For increasing performance 
+                       ID/Class should've been used. 
+                       For a small demo 
+                       it's okaish for now 
+  animation: showup 7s infinite;
+}
+
+div:last-of-type {
+  width:0px;
+  animation: reveal 7s;
+}
+
+div:last-of-type span {
+  margin-left:-155px;
+  animation: slidein 7s infinite;
+}*/
+
+@keyframes showup {
+    0% {opacity:0; padding-top:3vh;}
+    100% {opacity:1; padding-top:0vh;}
+}
+
+@keyframes slidein {
+    0% { opacity: 0; width: 0px;}
+    30% { opacity: 0; width: 0px;}
+    100% { opacity: 1; width: 250px; }
+}
+
+@keyframes showtheway {
+    0% { opacity: 0; padding-top: 0px;}
+    20% { opacity: 1; padding-top: 0px;}
+    70% { opacity: 0; padding-top: 20px;}
+    100% { opacity: 0; padding-top: 0px; }
+}
+
+@keyframes shrinktotop {
+    0% { opacity: 0; padding-top: 0px;}
+    100% { opacity: 0; padding-top: 0px; }
+}
+
+
+
+
+
+
+
+@keyframes newtext {
+    0% { opacity: 0; width: 0px;}
+    100% { opacity: 1; width: 25px;}
+}
+
+@keyframes reveal {
+    0% {opacity:0;width:155px;}
+    20% {opacity:1;}
+    30% {width:155px;}
+    80% {opacity:1;width:0px;}
+    100% {opacity:0;width:0px;}
+}
+
+
+p {
+  font-size:12px;
+  color:#999;
+  margin-top:200px;
+}
