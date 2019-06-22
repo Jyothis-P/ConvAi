@@ -37,9 +37,8 @@ body {
 
 .page
 {
-  margin-top: 200vh;
+  margin-top: 100vh;
   opacity: 0;
-  padding-top: 10vh;
 }
 
 #description

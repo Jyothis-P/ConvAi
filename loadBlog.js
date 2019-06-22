@@ -10,14 +10,14 @@ function scroll_to_next_page(currentPageID, nextPageID) {
 
 $(document).ready(function () {
     console.log('doc ready');
+    $('html, body').animate({
+    scrollTop: 0
+	  	}, 300);
 
 	$curPage = $("#story");
 	$nxtPage = $("#problem");
 
-	$curPage.addClass("showpage");
-    $('html, body').animate({
-    scrollTop: $curPage.offset().top - 200
-	  	}, 800);
+
 	$scrollPrompt = $('.downscroll');
 	$nav = $('.page-one');
 	$brand = $('.logo-container');
@@ -28,11 +28,7 @@ $(document).ready(function () {
 
 Algorithm
 
-1. scrollState = top;
-2. curPage = "#page-one";
-3. create a dictionary with the scroll values and the element ids.
-4. check if the current scroll value corresponds to the current page
-5. if not scroll to appropriate page.
+go back up
 
 
 */
@@ -56,15 +52,7 @@ $(window).scroll(function(){
     var scrollBottom = scrollPos + $(window).height();
     // console.log(scrollPos);
 
-    if (scrollPos > scroll+10 && !isScrolling) {
-    	console.log('scroll up');
-    }
-    if (scrollPos < scroll+10 && !isScrolling) {
-    	console.log('scroll down');
-    }   
-
-
-    var pageBottom = $curPage.offset().top + $curPage.outerHeight(true);
+    var pageBottom = $curPage.offset().top + $curPage.height();
 
     if ($curPage.offset().top + $(window).height() > pageBottom ) {
     	pageBottom = $curPage.offset().top + $(window).height();
@@ -72,7 +60,37 @@ $(window).scroll(function(){
     }
 
     console.log(scrollBottom + " X " + pageBottom + $curPage[0].id);
-    if (scrollBottom > pageBottom + 20) {
+    if ( ( scrollPos > 10 ) && ( scrollState === 'top' ) ) {
+        $scrollPrompt.css("animation-play-state", "paused");
+        $scrollPrompt.hide();
+        $(".expansion").addClass('slideleft');
+        $nav.addClass('goup fixed-top');
+        $brand.addClass('goleft');
+        $(".desc").fadeOut('slow');
+
+    	$curPage = $("#story");
+		$nxtPage = $("#problem");
+
+		$curPage.addClass("showpage");
+	    $('html, body').animate({
+	    scrollTop: $curPage.offset().top - 200
+		  	}, 800);
+
+	    scrollState = "scrolled";
+
+    } 
+    else if( ( scrollPos === 0 ) && ( scrollState === 'scrolled' ) ) {
+        $scrollPrompt.css("animation-play-state", "running");
+        $scrollPrompt.show();
+        $(".expansion").removeClass('slideleft');
+        $nav.removeClass('goup fixed-top');
+        $brand.removeClass('goleft');
+        $("#description").fadeIn()
+
+        scrollState = 'top';
+    }
+
+    else if (scrollBottom > pageBottom + 20) {
     	// $curPage.fadeOut("slow");
 
     	console.log("============================================");
