@@ -10,6 +10,10 @@ function scroll_to_next_page(currentPageID, nextPageID) {
 
 $(document).ready(function () {
     console.log('doc ready');
+    isLoaded = false;
+    setTimeout(function () {
+    	isLoaded = true;
+    }, 300);
     $('html, body').animate({
     scrollTop: 0
 	  	}, 300);
@@ -47,6 +51,8 @@ var isScrolling = false;
 var pages = ["#story", "#problem", "#pro", "#blem"];
 
 $(window).scroll(function(){ 
+
+	if (!isLoaded) {return;}
     
     var scrollPos = $(window).scrollTop();
     var scrollBottom = scrollPos + $(window).height();
