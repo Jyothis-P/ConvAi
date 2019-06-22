@@ -9,13 +9,6 @@ body {
 }
 
 
-/*div{
-  transition: all 0.1s;
-}
-*/
-
-
-
 
 .page-one
 {
@@ -29,6 +22,40 @@ body {
       -ms-transition: all 1s ease;
        -o-transition: all 1s ease;
           transition: all 1s ease;
+}
+
+.subhead
+{
+  font-weight: bolder;
+}
+
+.subbody
+{
+  margin-top: 2rem;
+  font-size: 1.7vw; 
+}
+
+.page
+{
+  margin-top: 200vh;
+  opacity: 0;
+  padding-top: 10vh;
+}
+
+#description
+{
+  opacity: 0;
+  font-size:24px;
+  -webkit-animation: showup 1s ease 2s normal forwards;
+  -o-animation: showup 1s ease 2s normal forwards;
+  animation: showup 1s ease 2s normal forwards;
+}
+
+.showpage
+{
+  -webkit-animation: showup 1s ease 1s   forwards;
+  -o-animation: showup 1s ease 1s   forwards;
+  animation: showup 1s ease 1s   forwards;
 }
 
 .goup
@@ -66,12 +93,6 @@ body {
   display: inline-block;
 }
 
-/*.name-start: after
-{
-  content: ""
-  opacity: 0;
-  animation: slidein 2s ease 1s;
-}*/
 
 .downscroll
 {
@@ -80,7 +101,7 @@ body {
   height: 3vh;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 30vh;
+  margin-top: 20vh;
   animation: showtheway 2s ease 3s infinite;
 }
 
@@ -121,7 +142,7 @@ body {
     100% { opacity: 0; padding-top: 0px; }
 }
 
-p {
+.placeholder {
   font-size:12px;
   color:#999;
   margin-top:200px;
