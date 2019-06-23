@@ -18,7 +18,8 @@ $(document).ready(function () {
     scrollTop: 0
 	  	}, 300);
 
-	$curPage = $("#story");
+    $curPage = $("#story");
+	$prevPage = $("#story");
 	$nxtPage = $("#problem");
 
 
@@ -50,6 +51,101 @@ var isScrolling = false;
 
 var pages = ["#story", "#problem", "#pro", "#blem"];
 
+function down_from_first() {
+        $scrollPrompt.css("animation-play-state", "paused");
+        $scrollPrompt.hide();
+        $(".expansion").addClass('slideleft');
+        $nav.addClass('goup fixed-top');
+        $brand.addClass('goleft');
+        $(".desc").fadeOut('slow');
+
+        $curPage = $("#story");
+        $nxtPage = $("#problem");
+
+        $curPage.addClass("showpage");
+        $('html, body').animate({
+        scrollTop: $curPage.offset().top - 200
+              }, 800);
+
+        scrollState = "scrolled";
+}
+
+function up_to_first() {
+        $curPage.removeClass("showpage");
+        $('html, body').animate({
+        scrollTop: 0});
+        $scrollPrompt.css("animation-play-state", "running");
+        $scrollPrompt.show();
+        $(".expansion").removeClass('slideleft');
+        $nav.removeClass('goup');
+        $brand.removeClass('goleft');
+        $("#description").fadeIn()
+
+        scrollState = 'top';
+}
+
+function to_next_page() {
+    console.log("============================================");
+    console.log("scrolling to: " + ($nxtPage.offset().top - 200));
+    $nxtPage.addClass("showpage");
+    $('html, body').animate({
+    scrollTop: $nxtPage.offset().top - 100
+        }, 800);
+
+    var nextIndex = pages.findIndex(function(id){
+        return id === "#" + $nxtPage[0].id;
+    });
+
+    console.log(nextIndex);
+    if (nextIndex < pages.length) 
+        nextIndex++;
+
+    $prevPage = $curPage;
+    $curPage = $nxtPage;
+    $nxtPage = $(pages[nextIndex]);
+    console.log("current: " +  $curPage[0].id);
+    console.log("next: " +  $nxtPage[0].id);
+}
+function to_prev_page() {
+    console.log("============================================");
+    console.log("scrolling to: " + ($prevPage.offset().top - 200));
+    $prevPage.addClass("showpage");
+    $('html, body').animate({
+    scrollTop: $prevPage.offset().top - 100
+        }, 800);
+
+    var nextIndex = pages.findIndex(function(id){
+        return id === "#" + $nxtPage[0].id;
+    });
+
+    console.log(nextIndex);
+    if (nextIndex > 0) 
+        nextIndex--;
+
+    $nxtPage = $curPage;
+    $curPage = $prevPage;
+    $prevPage = $(pages[nextIndex]);
+    console.log("current: " +  $curPage[0].id);
+    console.log("next: " +  $nxtPage[0].id);
+}
+
+$(".down").click(function(){ 
+        console.log("down");
+        if (scrollState === 'top')
+           down_from_first();
+        else{
+            to_next_page();
+        }
+});
+
+$(".up").click(function () {    
+        console.log("up");
+        if ($curPage[0].id === 'story')
+            up_to_first();
+        else
+            to_prev_page();
+});
+
 $(window).scroll(function(){ 
 
 	if (!isLoaded) {return;}
@@ -65,60 +161,60 @@ $(window).scroll(function(){
     	console.log("small para");
     }
 
-    console.log(scrollBottom + " X " + pageBottom + $curPage[0].id);
-    if ( ( scrollPos > 10 ) && ( scrollState === 'top' ) ) {
-        $scrollPrompt.css("animation-play-state", "paused");
-        $scrollPrompt.hide();
-        $(".expansion").addClass('slideleft');
-        $nav.addClass('goup fixed-top');
-        $brand.addClass('goleft');
-        $(".desc").fadeOut('slow');
+  //   console.log(scrollBottom + " X " + pageBottom + $curPage[0].id);
+  //   if ( ( scrollPos > 10 ) && ( scrollState === 'top' ) ) {
+  //       $scrollPrompt.css("animation-play-state", "paused");
+  //       $scrollPrompt.hide();
+  //       $(".expansion").addClass('slideleft');
+  //       $nav.addClass('goup fixed-top');
+  //       $brand.addClass('goleft');
+  //       $(".desc").fadeOut('slow');
 
-    	$curPage = $("#story");
-		$nxtPage = $("#problem");
+  //   	$curPage = $("#story");
+		// $nxtPage = $("#problem");
 
-		$curPage.addClass("showpage");
-	    $('html, body').animate({
-	    scrollTop: $curPage.offset().top - 200
-		  	}, 800);
+		// $curPage.addClass("showpage");
+	 //    $('html, body').animate({
+	 //    scrollTop: $curPage.offset().top - 200
+		//   	}, 800);
 
-	    scrollState = "scrolled";
+	 //    scrollState = "scrolled";
 
-    } 
-    else if( ( scrollPos === 0 ) && ( scrollState === 'scrolled' ) ) {
-        $scrollPrompt.css("animation-play-state", "running");
-        $scrollPrompt.show();
-        $(".expansion").removeClass('slideleft');
-        $nav.removeClass('goup fixed-top');
-        $brand.removeClass('goleft');
-        $("#description").fadeIn()
+  //   } 
+  //   else if( ( scrollPos === 0 ) && ( scrollState === 'scrolled' ) ) {
+  //       $scrollPrompt.css("animation-play-state", "running");
+  //       $scrollPrompt.show();
+  //       $(".expansion").removeClass('slideleft');
+  //       $nav.removeClass('goup fixed-top');
+  //       $brand.removeClass('goleft');
+  //       $("#description").fadeIn()
 
-        scrollState = 'top';
-    }
+  //       scrollState = 'top';
+  //   }
 
-    else if (scrollBottom > pageBottom + 20) {
-    	// $curPage.fadeOut("slow");
+  //   else if (scrollBottom > pageBottom + 20) {
+  //   	// $curPage.fadeOut("slow");
 
-    	console.log("============================================");
-    	console.log("scrolling to: " + ($nxtPage.offset().top - 200));
-    	$nxtPage.addClass("showpage");
-        $('html, body').animate({
-        scrollTop: $nxtPage.offset().top - 100
-  	  	}, 1000);
+  //   	console.log("============================================");
+  //   	console.log("scrolling to: " + ($nxtPage.offset().top - 200));
+  //   	$nxtPage.addClass("showpage");
+  //       $('html, body').animate({
+  //       scrollTop: $nxtPage.offset().top - 100
+  // 	  	}, 800);
 
-        var nextIndex = pages.findIndex(function(id){
-			return id === "#" + $nxtPage[0].id;
-		});
+  //       var nextIndex = pages.findIndex(function(id){
+		// 	return id === "#" + $nxtPage[0].id;
+		// });
 
-		console.log(nextIndex);
-		if (nextIndex < pages.length) 
-			nextIndex++;
+		// console.log(nextIndex);
+		// if (nextIndex < pages.length) 
+		// 	nextIndex++;
 
-		$curPage = $nxtPage;
-		$nxtPage = $(pages[nextIndex]);
-		console.log("current: " +  $curPage[0].id);
-		console.log("next: " +  $nxtPage[0].id);
-    }
+		// $curPage = $nxtPage;
+		// $nxtPage = $(pages[nextIndex]);
+		// console.log("current: " +  $curPage[0].id);
+		// console.log("next: " +  $nxtPage[0].id);
+  //   }
 
     // if (scrollPos >= 600 && ( scrollState === 'scrolled' ) ) {
     // 	$("#problem").addClass('showpage');
