@@ -32,7 +32,7 @@
  	</div>
 
  	<div id="story" class="container page">
- 		<h2 class="storyhead subhead">The story</h2>
+ 		<h1 class="storyhead subhead">The story</h1>
  		<p class="storybody subbody">My breakthrough came when I realised that I had been asking all the wrong questions. I had spent weeks trying to invent new ways to navigate existing systems, but what if those systems were fundamentally flawed? What if the experience required a radical reinvention of everything, the whole OS designed specifically with voice and simple interactions in mind capitulated by intelligent predictions.
 
 		After all if we strip away all the chrome, all the Aero and Paper and Frosted Glass, all the evidence of the “design systems” companies have poured billions into developing and maintaining, we come face to face with a skeleton of XEROX PARC’s 1973 invention. The desktop was never meant to work for the blind or handicapped, all efforts to extend the capabilities, in the end, they were all just crude workarounds, band-aids on a rotting wound.
@@ -40,7 +40,7 @@
  	</div>
 
  	<div id="problem" class="container page">
- 		<h2 class="problemhead subhead">The problem</h2>
+ 		<h1 class="problemhead subhead">The problem</h1>
  		<p class="problembody subbody">Before creating any great solution, a designer must come in terms with the problems that exist. After a bit of reading, I found a book “The Humane Interface”, in which Jef Raskin (the founder of the Macintosh project) asserted that the desktop interface strategy was “inefficient and inhumane”. 
 
 		The key arguments he put forth were :- 
@@ -60,7 +60,7 @@
 		</p>
  	</div>
  	<div id="idea" class="container page">
- 		<h2 class="problemhead subhead">The idea</h2>
+ 		<h1 class="problemhead subhead">The idea</h1>
  		<p class="problembody subbody">The core idea is to create an OS that responds to human intent, driven by simple conversations. An OS designed with short predictable interactions where the user is heavily assisted by an AI, thereby reducing cognitive load.  
 
 		Redesign the entire OS following 3 fundamental rules - 
@@ -73,65 +73,35 @@
 
 		</p>
  	</div>
- 	<div id="pro" class="container page">
- 		<h2 class="problemhead subhead">The problem</h2>
- 		<p class="problembody subbody">Before creating any great solution, a designer must come in terms with the problems that exist. After a bit of reading, I found a book “The Humane Interface”, in which Jef Raskin (the founder of the Macintosh project) asserted that the desktop interface strategy was “inefficient and inhumane”. 
+ 	<div id="architecture" class="container page">
+ 		<h1 class="problemhead subhead">The Architecture</h2>
+ 		<p class="problembody subbody">
+ 			<h2>Actions</h2>
 
-		The key arguments he put forth were :- 
+ 			<p>On an atomic level, convai is composed of actions. Actions are results of commands based on user requests. They can further create actions or display content and end.</p>
 
-		The Desktop environment enables Applications to exist.
-		Apps are modes, and anything modal in an interface sets the user up for errors and slips. Plus, the more ways there are to do something, the more complex interactions become and harder to achieve through voice.
+ 			<img class="container m-5" src="action.png">
 
-		The Desktop’s reliance on the mouse as a pointing device made the entire system harder and inefficient to navigate.
+ 			<h2>Flows</h2>
 
-		File naming and organisation as a whole is an exercise in futility.
-		When saving a document, for example, our locus of attention is not on coming up with a unique and memorable name—we just want to save our work. Seemingly minor moments of friction such as this burdens our cognitive load, distracting us from our intentions and from entering flow state.Before creating any great solution, a designer must come in terms with the problems that exist. After a bit of reading, I found a book “The Humane Interface”, in which Jef Raskin (the founder of the Macintosh project) asserted that the desktop interface strategy was “inefficient and inhumane”. 
+ 			<p>Several actions together constitute a flow of information or commands. They create logical meaning together and simply convey the required information in an easy to understand way. Each action in a flow is numbered ignorer to move forward and backward between them.</p>
+ 			
+ 			<img class="container m-5"  src="flow.png">
 
-		The key arguments he put forth were :- 
+ 			<h2>Search</h2>
 
-		The Desktop environment enables Applications to exist.
-		Apps are modes, and anything modal in an interface sets the user up for errors and slips. Plus, the more ways there are to do something, the more complex interactions become and harder to achieve through voice.
+ 			<p>Any query the user asks goes through search, contextual understanding of the query enables the OS to create the correct actions to further the query or provide information. Search can be invoked in any screen by a desired keyword, and the user can naturally speak to it ignorer to get things done.</p>
 
-		The Desktop’s reliance on the mouse as a pointing device made the entire system harder and inefficient to navigate.
 
-		File naming and organisation as a whole is an exercise in futility.
-		When saving a document, for example, our locus of attention is not on coming up with a unique and memorable name—we just want to save our work. Seemingly minor moments of friction such as this burdens our cognitive load, distracting us from our intentions and from entering flow state.Before creating any great solution, a designer must come in terms with the problems that exist. After a bit of reading, I found a book “The Humane Interface”, in which Jef Raskin (the founder of the Macintosh project) asserted that the desktop interface strategy was “inefficient and inhumane”. 
+ 			<h2>Overview</h2>
 
-		The key arguments he put forth were :- 
-
-		The Desktop environment enables Applications to exist.
-		Apps are modes, and anything modal in an interface sets the user up for errors and slips. Plus, the more ways there are to do something, the more complex interactions become and harder to achieve through voice.
-
-		The Desktop’s reliance on the mouse as a pointing device made the entire system harder and inefficient to navigate.
-
-		File naming and organisation as a whole is an exercise in futility.
-		When saving a document, for example, our locus of attention is not on coming up with a unique and memorable name—we just want to save our work. Seemingly minor moments of friction such as this burdens our cognitive load, distracting us from our intentions and from entering flow state.Before creating any great solution, a designer must come in terms with the problems that exist. After a bit of reading, I found a book “The Humane Interface”, in which Jef Raskin (the founder of the Macintosh project) asserted that the desktop interface strategy was “inefficient and inhumane”. 
-
-		The key arguments he put forth were :- 
-
-		The Desktop environment enables Applications to exist.
-		Apps are modes, and anything modal in an interface sets the user up for errors and slips. Plus, the more ways there are to do something, the more complex interactions become and harder to achieve through voice.
-
-		The Desktop’s reliance on the mouse as a pointing device made the entire system harder and inefficient to navigate.
-
-		File naming and organisation as a whole is an exercise in futility.
-		When saving a document, for example, our locus of attention is not on coming up with a unique and memorable name—we just want to save our work. Seemingly minor moments of friction such as this burdens our cognitive load, distracting us from our intentions and from entering flow state.
-
+ 			<p>The user is presented with a birds-eye view of every action inside the space. </p>
+ 			
+ 			<img class="container m-5"  src="overview.png">
 		</p>
  	</div>
- 	<div id="blem" class="container page">
- 		<h2 class="problemhead subhead">The idea</h2>
- 		<p class="problembody subbody">The core idea is to create an OS that responds to human intent, driven by simple conversations. An OS designed with short predictable interactions where the user is heavily assisted by an AI, thereby reducing cognitive load.  
-
-		Redesign the entire OS following 3 fundamental rules - 
-		<ol class="subbody">
-			<li><b>Natively Conversable</b></li>
-			<li><b>Focused and Predictable</b></li>
-			<li><b>Fast and Fluid</b></li>
-		</ol>
-
-
-		</p>
+ 	<div id="placeholder" class="container page">
+		<h1>More to follow.</h1>
  	</div>
 	
 	<p class="placeholder"> </p>

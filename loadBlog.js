@@ -46,7 +46,7 @@ go back up
 
     var isScrolling = false;
 
-    var pages = ["#story", "#problem", "#idea", "#pro", "#blem"];
+    var pages = ["#story", "#problem", "#idea", "#architecture", "#placeholder"];
 
     function down_from_first() {
         $(".up").animate({ opacity: 1 }, 800);
