@@ -50,8 +50,8 @@ go back up
 
     function down_from_first() {
         $(".up").animate({ opacity: 1 }, 800);
-        $scrollPrompt.css("animation-play-state", "paused");
-        $scrollPrompt.hide();
+        // $scrollPrompt.css("animation-play-state", "paused");
+        // $scrollPrompt.hide();
         $(".expansion").addClass("slideleft");
         $nav.addClass("goup fixed-top");
         $brand.addClass("goleft");
@@ -100,7 +100,7 @@ go back up
         if (pageBottom > scrollBottom) {
             $("html, body").animate(
                 {
-                    scrollTop: $(window).scrollTop() + $(window).height() / 3
+                    scrollTop: $(window).scrollTop() + $(window).height() / 2
                 },
                 800
             );

@@ -70,7 +70,9 @@ body {
 
 .goleft
 {
-  padding-left: 2vw !important;
+  padding-left: 2vw;
+  overflow: visible !important;
+  width: 0 !important;
 }
 
 .slideleft
@@ -80,7 +82,9 @@ body {
 }
 
 .logo-container {
-  padding-left: 30vw;
+  /*padding-left: 30vw;*/
+  width: 100vw;
+  text-align: center;
   display:inline-block;
   overflow:hidden;
   white-space:nowrap;
@@ -162,6 +166,8 @@ body {
     0% {opacity:0;}
     100% {opacity:1; animation-delay: 0s;}
 }
+
+
 
 
 @keyframes slidein {
