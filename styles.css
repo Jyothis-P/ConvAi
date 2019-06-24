@@ -13,11 +13,19 @@ body {
 }
 
 
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+}
+
+
 
 .page-one
 {
   /*text-align:center;*/
-  z-index: 2   !important;
   font-weight:300;
   font-size:56px;
   padding-top:40vh;
@@ -156,6 +164,81 @@ body {
 }
 
 
+.placeholder {
+  font-size:12px;
+  color:#999;
+  margin-top:200px;
+}
+
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+.m-5 {
+  margin: 3rem !important;
+}
+
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+.navbar > .container,
+.navbar > .container-fluid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+
+@media (max-width: 575.98px) {
+  .navbar-expand-sm > .container,
+  .navbar-expand-sm > .container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+  .container {
+    min-width: 992px !important;
+  }
+
+
+
+
 @keyframes showup {
     0% {opacity:0; padding-top:3vh;}
     100% {opacity:1; padding-top:0vh;}
@@ -188,8 +271,4 @@ body {
     100% { opacity: 0; padding-top: 0px; }
 }
 
-.placeholder {
-  font-size:12px;
-  color:#999;
-  margin-top:200px;
-}
+
