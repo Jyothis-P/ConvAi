@@ -7,7 +7,7 @@ body {
   background:#1F2022;
   color:white;
   font-family:'Roboto';
-  overflow: hidden;
+  /*overflow: hidden;*/
 /*  -webkit-perspective: 1000;
   -webkit-transform: translate3d(0,0,0);*/
 }
@@ -50,8 +50,8 @@ body {
 
 .page
 {
-  margin-top: 100vh;
-  opacity: 0;
+  margin-top: 20vh;
+  /*opacity: 0;*/
 }
 
 #description
@@ -61,6 +61,11 @@ body {
   -webkit-animation: showup 1s ease 2s normal forwards;
   -o-animation: showup 1s ease 2s normal forwards;
   animation: showup 1s ease 2s normal forwards;
+}
+
+#story
+{
+  margin-top: 100vh;
 }
 
 .showpage
@@ -74,6 +79,7 @@ body {
 {
   padding-top: 1vh;
   font-size: 3vw;
+  height: 0;
 }
 
 .goleft
@@ -91,7 +97,7 @@ body {
 
 .logo-container {
   /*padding-left: 30vw;*/
-  width: 100vw;
+  width: 100%;
   text-align: center;
   display:inline-block;
   overflow:hidden;
@@ -170,6 +176,10 @@ body {
   margin-top:200px;
 }
 
+#goodbye
+{
+  margin-top: 80vh;
+}
 
 .container {
   width: 100%;
