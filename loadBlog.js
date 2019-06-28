@@ -16,8 +16,8 @@ $(document).ready(function() {
 
     var txt = '<span class="logo-span expansion">ersational </span>';
     function down_from_first() {
-        // $scrollPrompt.css("animation-play-state", "paused");
-        // $scrollPrompt.hide();
+        $scrollPrompt.css("animation-play-state", "paused");
+        $scrollPrompt.hide();
         $(".expansion").addClass("slideleft");
         $nav.addClass("goup fixed-top");
         $brand.addClass("goleft");
