@@ -27,12 +27,7 @@ $(document).ready(function() {
         $nxtPage = $("#problem");
 
         // $curPage.addClass("showpage");
-        $("html, body").animate(
-            {
-                scrollTop: $curPage.offset().top - 200
-            },
-            800
-        );
+
 
         scrollState = "scrolled";
     }
