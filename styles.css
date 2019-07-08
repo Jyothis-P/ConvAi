@@ -22,6 +22,21 @@ a:visited {
   text-decoration: none;
 }
 
+.seperator {
+  margin-left: 12vw;
+}
+
+.seperator-one {
+  width: 2vw;
+  display: inline-block;
+}
+
+.seperator-date {
+  padding-left: 4vw;
+  font-size: 1.5rem;
+  display: inline-block;
+}
+
 
 .fixed-top {
   position: fixed;

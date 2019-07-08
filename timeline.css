@@ -1,0 +1,75 @@
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.time-first {
+  top: 100vh;
+  padding-top: 0 !important;
+}
+
+.right-first::after {
+  top: 100vh !important;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  padding-top: 100vh;
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 100vh;
+  bottom: 0;
+  left: 31px;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.timeline-container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  position: relative;
+  background-color: inherit;
+}
+
+/* The circles on the timeline */
+.timeline-container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 0%;
+}
+
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: 15px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  font-size: 1.5rem;
+  color: white;
+  position: relative;
+}
