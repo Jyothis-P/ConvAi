@@ -22,20 +22,6 @@ a:visited {
   text-decoration: none;
 }
 
-.seperator {
-  margin-left: 12vw;
-}
-
-.seperator-one {
-  width: 2vw;
-  display: inline-block;
-}
-
-.seperator-date {
-  padding-left: 4vw;
-  font-size: 1.5rem;
-  display: inline-block;
-}
 
 
 .fixed-top {
@@ -135,7 +121,8 @@ a:visited {
 {
   padding-top: 1vh;
   font-size: 3vw;
-  height: 0;
+  height: 8vh;
+  background: #1F2022E8;
 }
 
 .goleft
