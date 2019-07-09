@@ -23,6 +23,12 @@ a:visited {
 }
 
 
+iframe {
+  display: block;
+  margin: 0 auto;
+}
+
+
 
 .fixed-top {
   position: fixed;
